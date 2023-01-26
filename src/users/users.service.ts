@@ -38,10 +38,21 @@ export class UsersService {
   }
 
   async getUserByEmail(email: string) {
-    const user = this.userRepository.findOne({
-      where: { email },
-      include: { all: true },
-    });
+    console.log('getUser by email ', { email });
+    const user = await this.userRepository
+      .findOne({
+        where: { email },
+        include: { all: true },
+      })
+      .then(res => res)
+      .catch(err => {
+        console.log('Ошибка про поиске по email: ', err);
+        throw new HttpException(
+          'Ошибка про поиске по email: ',
+          HttpStatus.NOT_FOUND
+        );
+      });
+
     return user;
   }
 

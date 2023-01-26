@@ -3,9 +3,15 @@ import { CreateRoleDto } from './dto/create-role.dto';
 import { RolesService } from './roles.service';
 import { Controller } from '@nestjs/common';
 import { Body, Get, Param, Post } from '@nestjs/common/decorators';
-import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
+import {
+  ApiBearerAuth,
+  ApiOperation,
+  ApiResponse,
+  ApiTags,
+} from '@nestjs/swagger';
 
 @ApiTags('Роли')
+@ApiBearerAuth()
 @Controller('roles')
 export class RolesController {
   constructor(private roleService: RolesService) {}
@@ -17,8 +23,8 @@ export class RolesController {
     return this.roleService.createRole(dto);
   }
 
-  // @ApiOperation({ summary: 'Получить роль по имени' })
-  // @ApiResponse({ status: 200, type: Role })
+  @ApiOperation({ summary: 'Получить роль по имени' })
+  @ApiResponse({ status: 200, type: Role })
   @Get('/:value')
   getRoleByValue(@Param('value') value: string) {
     return this.roleService.getRoleByValue(value);

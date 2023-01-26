@@ -1,4 +1,3 @@
-
 import { UserRole } from './../roles/user-roles.model';
 import { Role } from './../roles/roles.model';
 import { ApiProperty } from '@nestjs/swagger';
@@ -28,7 +27,7 @@ export class User extends Model<User, UserCreationAttrs> {
   })
   id: number;
 
-  @ApiProperty({ example: 'user@mail.com', description: 'Email' })
+  @ApiProperty({ example: 'admin@mail.ru', description: 'Email' })
   @Column({
     type: DataType.STRING,
     unique: true,
@@ -36,7 +35,7 @@ export class User extends Model<User, UserCreationAttrs> {
   })
   email: string;
 
-  @ApiProperty({ example: '12345', description: 'Пароль' })
+  @ApiProperty({ example: 'admin', description: 'Пароль' })
   @Column({
     type: DataType.STRING,
     allowNull: false,
@@ -61,5 +60,5 @@ export class User extends Model<User, UserCreationAttrs> {
   roles: Role[];
 
   @HasMany(() => Post)
-  posts:Post[]
+  posts: Post[];
 }

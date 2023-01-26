@@ -20,6 +20,7 @@ async function start() {
     .setTitle('Урок по бэку')
     .setDescription('Документация REST API')
     .setVersion('1.0')
+    .addBearerAuth()
     .build();
 
   const customOptions: SwaggerCustomOptions = {

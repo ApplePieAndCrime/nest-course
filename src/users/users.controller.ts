@@ -13,12 +13,18 @@ import {
   UseGuards,
   Query,
 } from '@nestjs/common';
-import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { Roles } from 'src/auth/roles-auth.deorator';
+import {
+  ApiBearerAuth,
+  ApiOperation,
+  ApiResponse,
+  ApiTags,
+} from '@nestjs/swagger';
+import { Roles } from 'src/auth/roles-auth.decorator';
 import { AddRoleDto } from './dto/add-role.dto';
 import { get, pick } from 'lodash';
 
 @ApiTags('Пользователи')
+@ApiBearerAuth()
 @Controller('users')
 export class UsersController {
   constructor(private usersService: UsersService) {}

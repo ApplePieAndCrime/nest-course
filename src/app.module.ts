@@ -7,7 +7,6 @@ import { SequelizeModule } from '@nestjs/sequelize';
 import { UsersModule } from './users/users.module';
 import { RolesModule } from './roles/roles.module';
 import { AuthModule } from './auth/auth.module';
-import { NotesModule } from './notes/notes.module';
 
 import { ServeStaticModule } from '@nestjs/serve-static/dist/serve-static.module';
 import { join } from 'path';
@@ -22,7 +21,7 @@ import * as path from 'path';
   providers: [],
   imports: [
     ConfigModule.forRoot({
-      envFilePath: `.${process.env.NODE_ENV}.env`,
+      envFilePath: `.env`,
     }),
 
     ServeStaticModule.forRoot(
@@ -51,7 +50,6 @@ import * as path from 'path';
     UsersModule,
     RolesModule,
     AuthModule,
-    NotesModule,
     PostsModule,
     FilesModule,
     DevelopHelpersModule,
