@@ -1,14 +1,15 @@
 'use strict';
 
 const { QueryTypes } = require('sequelize');
-const { NestFactory } = require('@nestjs/core');
+// const { NestFactory } = require('@nestjs/core');
 const { User } = require('../src/users/users.model.ts');
-const UsersService = require('../src/users/users.service.ts');
-const { AppModule } = require('../src/app.module.ts');
+// const UsersService = require('../src/users/users.service.ts');
+// const { AppModule } = require('../src/app.module.ts');
 
 // !NOT WORK: Cannot use import statement outside a module
 // возможно конфликт TS и JS
 
+const nowDate = new Date().toISOString();
 // init data
 const roles = [
   {
@@ -57,7 +58,7 @@ const userRoles = [
   },
 ];
 
-/** @type {import('sequelize-cli').Migration} */
+/** @type {require('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
     /**
@@ -126,14 +127,14 @@ module.exports = {
 
     // await createBaseTables('user_roles', userRoles);
 
-    const application = await NestFactory.createApplicationContext(AppModule);
-    const usersService = application.get(UsersService);
-    console.log({ usersService });
-    const users = await usersService.getAllUsers();
+    // const application = await NestFactory.createApplicationContext(AppModule);
+    // const usersService = application.get(UsersService);
+    // console.log({ usersService });
+    // const users = await usersService.getAllUsers();
     console.log({ users });
 
-    await application.close();
-    process.exit(0);
+    // await application.close();
+    // process.exit(0);
   },
 
   async down(queryInterface, Sequelize) {

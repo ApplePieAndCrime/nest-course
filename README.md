@@ -15,11 +15,10 @@ Changes:
 - add controler for developer (generate default values)
 - add simple migration
 - custom swagger + scss watcher
-
-Need:
-
 - add swagger auth
 
-POSTMAN: https://www.postman.com/cloudy-desert-83312/workspace/nest-course-public/request/19552705-e2c3e5e2-6130-43ac-9c46-a217240525c7
+POSTMAN: [https://www.postman.com/cloudy-desert-83312/workspace/nest-course-public/request/19552705-e2c3e5e2-6130-43ac-9c46-a217240525c7](https://www.postman.com/cloudy-desert-83312/workspace/nest-course-public/request/19552705-e2c3e5e2-6130-43ac-9c46-a217240525c7)
 
-DOCKER HUB: https://hub.docker.com/repository/docker/applepieandcrime/nest-course-1/general
+DOCKER HUB: [https://hub.docker.com/repository/docker/applepieandcrime/nest-course-1/general](https://hub.docker.com/repository/docker/applepieandcrime/nest-course-1/general)
+
+VPS: [http://nest-course.applepieandcrime.com:5000/api/docs](http://nest-course.applepieandcrime.com:5000/api/docs)
