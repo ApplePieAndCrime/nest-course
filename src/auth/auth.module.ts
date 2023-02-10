@@ -20,4 +20,3 @@ import { forwardRef } from '@nestjs/common/utils';
   exports: [AuthService, JwtModule],
 })
 export class AuthModule {}
-

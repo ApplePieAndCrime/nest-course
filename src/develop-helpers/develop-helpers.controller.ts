@@ -13,4 +13,3 @@ export class DevelopHelpersController {
     return this.developHelpersService.createDefaults();
   }
 }
-

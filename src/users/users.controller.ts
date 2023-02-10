@@ -82,4 +82,3 @@ export class UsersController {
     return this.usersService.ban(dto);
   }
 }
-

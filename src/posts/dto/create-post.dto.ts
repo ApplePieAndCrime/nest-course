@@ -10,4 +10,3 @@ export class CreatePostDto {
   @ApiProperty({ example: '1', description: 'id автора' })
   readonly userId: number;
 }
-

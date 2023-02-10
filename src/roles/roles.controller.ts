@@ -30,4 +30,3 @@ export class RolesController {
     return this.roleService.getRoleByValue(value);
   }
 }
-

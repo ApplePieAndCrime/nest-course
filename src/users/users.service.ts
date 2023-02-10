@@ -34,6 +34,7 @@ export class UsersService {
     const options: FindOptions<User> = { where: { id } };
     options.include = full ? { all: true } : null;
     const user = await this.userRepository.findOne(options);
+    console.log('user findOne', { user });
     return user;
   }
 
@@ -44,8 +45,8 @@ export class UsersService {
         where: { email },
         include: { all: true },
       })
-      .then(res => res)
-      .catch(err => {
+      .then((res) => res)
+      .catch((err) => {
         console.log('Ошибка про поиске по email: ', err);
         throw new HttpException(
           'Ошибка про поиске по email: ',
@@ -82,4 +83,3 @@ export class UsersService {
     return user;
   }
 }
-

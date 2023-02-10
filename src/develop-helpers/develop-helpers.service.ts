@@ -16,19 +16,19 @@ export class DevelopHelpersService {
   async createDefaults() {
     try {
       // rolesd
-        const rolesResult = await Promise.map(roles, role => {
-          return this.rolesService.createRole(role);
-        });
-        console.log({ rolesResult });
+      const rolesResult = await Promise.map(roles, (role) => {
+        return this.rolesService.createRole(role);
+      });
+      console.log({ rolesResult });
 
       // users
-      const usersResult = await Promise.map(users, user => {
+      const usersResult = await Promise.map(users, (user) => {
         return this.authServise.registration(user);
       });
       console.log({ usersResult });
 
       //user-roles
-      const userRolesResult = await Promise.map(userRoles, userRole => {
+      const userRolesResult = await Promise.map(userRoles, (userRole) => {
         return this.usersService.addRole(userRole);
       });
       console.log({ userRolesResult });
@@ -40,4 +40,3 @@ export class DevelopHelpersService {
     }
   }
 }
-

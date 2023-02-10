@@ -13,7 +13,7 @@
     "migration-create": "npx sequelize-cli migration:generate --name",
     "migrate": "npx sequelize-cli db:migrate --name ",
     "build": "nest build",
-    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "format": "prettier --write \"src/**/*.ts\" ",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
@@ -52,7 +52,6 @@
     "sequelize-cli-typescript": "*",
     "sequelize-typescript": "^2.1.5",
     "swagger-ui-express": "^4.6.0",
-    "typeorm": "^0.3.11",
     "uuid": "^9.0.0"
   },
   "devDependencies": {

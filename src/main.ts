@@ -25,10 +25,10 @@ async function start() {
 
   const customOptions: SwaggerCustomOptions = {
     customSiteTitle: 'LOL',
-    customCssUrl: '/public/css/index.css',
-    customJs: '/public/swagger.js',
-    customCss:
-      'div.swagger-ui div.opblock-tag-section { backgroud-color: green; }',
+    customCssUrl: '../public/css/index.css',
+    customJs: '../public/swagger.js',
+    // customCss:
+    // 'div.swagger-ui div.opblock-tag-section { backgroud-color: green; }',
   };
 
   const document = SwaggerModule.createDocument(app, config);

@@ -13,4 +13,3 @@ import { User } from 'src/users/users.model';
   imports: [SequelizeModule.forFeature([User, Post]), AuthModule, FilesModule],
 })
 export class PostsModule {}
-

@@ -13,4 +13,3 @@ import { User } from './../users/users.model';
   exports: [RolesService],
 })
 export class RolesModule {}
-
