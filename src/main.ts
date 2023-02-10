@@ -10,6 +10,8 @@ import {
 import { join } from 'path';
 import 'reflect-metadata';
 
+declare const module: any;
+
 async function start() {
   const PORT = process.env.PORT || 5000;
   const app = await NestFactory.create(AppModule);
@@ -36,6 +38,11 @@ async function start() {
   SwaggerModule.setup('/api/docs', app, document, customOptions);
   // app.useGlobalGuards(new JwtAuthGuard())
   app.useGlobalPipes(new ValidationPipe());
+
+  if (module.hot) {
+    module.hot.accept();
+    module.hot.dispose(() => app.close());
+  }
 
   await app.listen(PORT, () => console.log(`Server started on port = ${PORT}`));
 }
