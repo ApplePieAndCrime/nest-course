@@ -39,12 +39,12 @@ async function start() {
   // app.useGlobalGuards(new JwtAuthGuard())
   app.useGlobalPipes(new ValidationPipe());
 
+  await app.listen(PORT, () => console.log(`Server started on port = ${PORT}`));
+
   if (module.hot) {
     module.hot.accept();
     module.hot.dispose(() => app.close());
   }
-
-  await app.listen(PORT, () => console.log(`Server started on port = ${PORT}`));
 }
 
 start();
